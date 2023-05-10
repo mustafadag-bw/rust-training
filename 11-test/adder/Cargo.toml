@@ -1,5 +1,5 @@
 [package]
-name = "generic-types-traits-lifetimes"
+name = "adder"
 version = "0.1.0"
 edition = "2021"
 

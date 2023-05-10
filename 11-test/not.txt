@@ -1,0 +1,21 @@
+In Rust, tests are run parallel. Hence they can interfere each other. To prevent this behavior:
+cargo test -- --test-threads=1
+command can be used. (Tests become serial this way)
+
+This is used when we want to see the println! s even if the test succeeds:
+cargo test -- --show-output 
+
+This is used to only run specific test:
+cargo test {test_function_name}
+
+We can also test some tests Example: we have 3 test function -> create_table_fail, create_table_success, create_table_fail_ext
+cargo test create_table // Will call all test functions that start with create_table
+
+We can ignore test by putting #[ignore] to the upper line of the test function.
+cargo test -- --ignored // Used to only run ignored tests
+cargo test -- --include-ignored // Run all tests ignored or not
+
+The convention for tests is to create a module named tests in each file to contain the test functions and to annotate the module with cfg(test).
+[cfg(test)] is used to tell rust not to compile tests for build to decrease the size of last executable.
+
+ONLY library crates are supposed to have integration_tests (tests directory). Binary crates(main.rs) are meant to be run on their own.

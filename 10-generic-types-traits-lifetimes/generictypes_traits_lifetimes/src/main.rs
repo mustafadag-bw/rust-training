@@ -1,5 +1,5 @@
 use std::{cmp::PartialOrd, fmt::Display};
-use generic_types_traits_lifetimes::{Tweet, Summary, NewsArticle, notify, returns_summarizable};
+use generictypes_traits_lifetimes::{Tweet, Summary, NewsArticle, notify, returns_summarizable};
 
 // we can’t implement external traits on external types. For example, we can’t implement the Display trait on Vec<T> within our crate(generic_...)
 // Either trait or the type should be in our crate to implement due to coherence

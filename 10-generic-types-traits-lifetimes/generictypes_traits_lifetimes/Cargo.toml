@@ -1,5 +1,5 @@
 [package]
-name = "common-collections"
+name = "generictypes_traits_lifetimes"
 version = "0.1.0"
 edition = "2021"
 
