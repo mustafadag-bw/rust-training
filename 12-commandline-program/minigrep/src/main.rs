@@ -8,7 +8,13 @@ fn main() {
     //dbg!(args);
     // args = ["target/debug/minigrep", "needle", "haystack"]
 
-    let config = Config::build(&args).unwrap_or_else(|err| {
+    // let config = Config::build(&args).unwrap_or_else(|err| {
+    //     eprintln!("Problem parsing arguments: {err}");
+    //     process::exit(1);
+    // });
+
+    // env::args return an iterator.
+    let config = Config::build(env::args()).unwrap_or_else(|err| {
         eprintln!("Problem parsing arguments: {err}");
         process::exit(1);
     });
