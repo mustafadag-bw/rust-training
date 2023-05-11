@@ -15,3 +15,6 @@ Cargo.lock
 
 # Do not include DS_Store for MacOS
 **/.DS_Store
+
+# Do not include .env
+**/.env
