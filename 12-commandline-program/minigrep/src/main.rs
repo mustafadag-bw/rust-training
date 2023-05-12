@@ -4,7 +4,6 @@ use minigrep::Config;
 
 // cargo run -- search_param
 fn main() {
-    let args: Vec<String> = env::args().collect();
     //dbg!(args);
     // args = ["target/debug/minigrep", "needle", "haystack"]
 
@@ -13,7 +12,7 @@ fn main() {
     //     process::exit(1);
     // });
 
-    // env::args return an iterator.
+    // env::args return an iterator and build needs to get an iterator as input. Otherwise we need to send args().collect()
     let config = Config::build(env::args()).unwrap_or_else(|err| {
         eprintln!("Problem parsing arguments: {err}");
         process::exit(1);
